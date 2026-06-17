@@ -1,0 +1,21 @@
+2.py 2-division method root calclating program
+
+8.py not complete 8 queen problem program
+
+c.py LZ-77 compression program
+
+d.py LZ-77 decompression program
+
+data.py data for LZ-77 compression program
+
+ds.py another decompression program
+
+s.py move 0~16 on top and move 84~99 on bottom
+
+r.py unfifnished RSA code solve
+
+s.py in 新しいフォルダー(a new folder) another compression program move slowly
+s2.py in 新しいフォルダー(a new folder) another compression program noise containing
+in 新しいフォルダー(a new folder)script.py wrong merge sort
+
+p.py calculate product by sum
