@@ -125,7 +125,24 @@ def add_bignum(a_digits, b_digits):
     if carry:
         result.append(carry)
     return result
-a_digits = [50000,48000]  # 50000
-b_digits = [50000,4000]  # 50000
+a_digits = [50000,48000]  # 4800050000
+b_digits = [50000,4000]  # 400050000
 result = add_bignum(a_digits, b_digits)
 print(result)  # [0, 1] つまり 100000
+
+def sub_bignum(a_digits, b_digits):
+    result = []
+    borrow = 0                        # carry ではなく borrow(借り)
+    for i in range(max(len(a_digits), len(b_digits))):
+        da = a_digits[i] if i < len(a_digits) else 0
+        db = b_digits[i] if i < len(b_digits) else 0
+        s = da - db - borrow          # 足すのではなく引く
+        if s < 0:                     # 引けない(マイナス)なら
+            s += BASE                 # 上の桁から BASE を借りる
+            borrow = 1
+        else:
+            borrow = 0
+        result.append(s)
+    while len(result) > 1 and result[-1] == 0:
+        result.pop()
+    return result
