@@ -133,6 +133,11 @@ print(result)  # [0, 1] つまり 100000
 def sub_bignum(a_digits, b_digits):
     result = []
     borrow = 0                        # carry ではなく borrow(借り)
+    if len(a_digits) < len(b_digits):
+        tmp = a_digits
+        a_digits = b_digits
+        b_digits = tmp
+        tmp= -1
     for i in range(max(len(a_digits), len(b_digits))):
         da = a_digits[i] if i < len(a_digits) else 0
         db = b_digits[i] if i < len(b_digits) else 0
@@ -145,4 +150,4 @@ def sub_bignum(a_digits, b_digits):
         result.append(s)
     while len(result) > 1 and result[-1] == 0:
         result.pop()
-    return result
+    return result*tmp
